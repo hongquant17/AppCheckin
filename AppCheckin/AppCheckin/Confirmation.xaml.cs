@@ -22,7 +22,7 @@ namespace AppCheckin
         {
             if (flag)
             {
-                await Navigation.PushAsync(new CheckinOption());
+                await Navigation.PushAsync(new CheckinPage());
             }
         }
 

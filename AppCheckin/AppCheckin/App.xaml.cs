@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Plugin.Media.Abstractions;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppCheckin.Droid;
 
 namespace AppCheckin
 {
