@@ -21,16 +21,14 @@ namespace AppCheckin
         {
             base.OnAppearing();
 
-            var cameraService = DependencyService.Get<ICameraService>();
-            cameraService.StartCameraPreview(cameraPreviewHolder);
+            
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
-            var cameraService = DependencyService.Get<ICameraService>();
-            cameraService.StopCameraPreview();
+
         }
 
         private  void OnCaptureClicked(object sender, EventArgs e)
