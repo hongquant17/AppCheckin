@@ -11,8 +11,7 @@ namespace AppCheckin
         public App()
         {
             InitializeComponent();
-            Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
-            MainPage = new NavigationPage(new MainPage());  
+            MainPage = new CheckinPage();  
         }
 
         protected override void OnStart()
