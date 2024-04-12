@@ -1,8 +1,8 @@
-
+﻿
 using System;
 using Android.Hardware.Camera2;
 
-namespace CustomRenderer.Droid
+namespace AppCheckin.Droid
 {
     public class CameraStateListener : CameraDevice.StateCallback
     {

@@ -1,11 +1,11 @@
-
+﻿
 using System;
 using Android.Content;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 
-namespace CustomRenderer.Droid
+namespace AppCheckin.Droid
 {
     public class AutoFitTextureView : TextureView
     {

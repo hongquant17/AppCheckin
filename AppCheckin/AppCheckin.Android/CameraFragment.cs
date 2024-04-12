@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +17,7 @@ using Java.Lang;
 using Java.Util.Concurrent;
 using Xamarin.Forms.Platform.Android;
 
-namespace CustomRenderer.Droid
+namespace AppCheckin.Droid
 {
     class CameraFragment : Fragment, TextureView.ISurfaceTextureListener
     {

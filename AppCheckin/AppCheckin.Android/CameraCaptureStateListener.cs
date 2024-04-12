@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using Android.Hardware.Camera2;
 
-namespace CustomRenderer.Droid
+namespace AppCheckin.Droid
 {
     class CameraCaptureStateListener : CameraCaptureSession.StateCallback
     {

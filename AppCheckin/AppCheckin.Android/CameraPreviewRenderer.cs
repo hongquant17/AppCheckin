@@ -1,16 +1,16 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using AndroidX.Fragment.App;
 using Android.Content;
 using Android.Views;
 using Android.Widget;
-using AppCheckin.Android;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.FastRenderers;
+using AppCheckin.Droid;
 
 [assembly: ExportRenderer(typeof(AppCheckin.CameraPreview), typeof(CameraPreviewRenderer))]
-namespace AppCheckin.Android
+namespace AppCheckin.Droid
 {
     public class CameraPreviewRenderer : FrameLayout, IVisualElementRenderer, IViewRenderer
     {
