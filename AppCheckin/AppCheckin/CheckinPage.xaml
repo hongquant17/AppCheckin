@@ -1,13 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AppCheckin;assembly=AppCheckin"
-             x:Class="AppCheckin.CheckinPage"
-             Title="Main Page">
-    <StackLayout Margin="20,35,20,20">
-        <Label Text="Camera Preview:" />
-        <local:CameraPreview Camera="Front"
-							 HorizontalOptions="FillAndExpand"
-							 VerticalOptions="FillAndExpand" />
-    </StackLayout>
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="AppCheckin.CheckinPage">
+
+    <AbsoluteLayout>
+        <xct:CameraView CameraOptions="Front"
+                    x:Name="cameraView"
+                    CaptureMode="Photo"
+                    OnAvailable="CameraView_OnAvailable"
+                    MediaCaptured="CameraView_MediaCaptured"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.8, 0.4"
+                    AbsoluteLayout.LayoutFlags="All"
+                    IsAvailable="True"
+                    BackgroundColor="Transparent"/>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0.7, 1, 0.3"
+                         AbsoluteLayout.LayoutFlags="All"
+                         Padding="20">
+                <Label Text="Để mặt vào khung hình"
+                       x:Name="alignFaceText"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="Black"
+                       FontSize="Medium"
+                       IsVisible="True"/>
+
+            <Label Text="Vui lòng điểm danh lại" 
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="Black"
+                       FontSize="Medium"
+                       IsVisible="false"/>
+
+            <Button Text="Chụp ảnh"
+                        x:Name="captureButton"
+                        Clicked="OnCaptureClicked"
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        CornerRadius="5"
+                        IsVisible="true"/>
+            </StackLayout>
+        <Image x:Name="previewPicture"
+               AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.8, 0.4"
+               AbsoluteLayout.LayoutFlags="All"
+               ScaleY="-1"
+               Aspect="AspectFill"/>
+    </AbsoluteLayout>
 </ContentPage>

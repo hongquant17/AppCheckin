@@ -11,7 +11,7 @@ namespace AppCheckin
         public App()
         {
             InitializeComponent();
-            MainPage = new CheckinPage();  
+            MainPage = new NavigationPage(new MainPage());  
         }
 
         protected override void OnStart()
