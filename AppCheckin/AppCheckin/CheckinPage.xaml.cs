@@ -40,7 +40,7 @@ namespace AppCheckin
             cameraView.IsVisible = false;
             alignFaceText.IsVisible = false;
             captureButton.IsVisible = false;
-            
+
             //Console.WriteLine("+++++++++++++++");
             //Console.WriteLine(previewPicture.Height);
             //Console.WriteLine(previewPicture.Width);
