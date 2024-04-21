@@ -4,6 +4,8 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using System.Threading.Tasks;
+using AppCheckin;
 
 namespace AppCheckin.Droid
 {
@@ -14,7 +16,7 @@ namespace AppCheckin.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

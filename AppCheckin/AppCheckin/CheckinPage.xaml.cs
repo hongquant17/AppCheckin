@@ -1,5 +1,9 @@
 ﻿using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,9 +35,8 @@ namespace AppCheckin
             captureButton.IsEnabled = e;
         }
 
-        void CameraView_MediaCaptured(object sender, MediaCapturedEventArgs e)
+        void CameraView_MediaCapture(object sender, MediaCapturedEventArgs e)
         {
-
             previewPicture.IsVisible = true;
             previewPicture.Rotation = e.Rotation;
             previewPicture.Source = e.Image;
@@ -41,10 +44,19 @@ namespace AppCheckin
             alignFaceText.IsVisible = false;
             captureButton.IsVisible = false;
 
-            //Console.WriteLine("+++++++++++++++");
-            //Console.WriteLine(previewPicture.Height);
-            //Console.WriteLine(previewPicture.Width);
+            //byte[] imageBytes = await ConvertImageSourceToBytes(e.Image);
 
+            //var fileName = Path.Combine(FileSystem.CacheDirectory, "captured_image.jpg");
+            //File.WriteAllBytes(fileName, imageBytes);
+
+            //Console.WriteLine("Image saved successfully to: " + fileName);
+            Console.WriteLine("____________________");
+            Console.WriteLine(previewPicture.Height);
+            Console.WriteLine(previewPicture.Width);
+            Console.WriteLine(DeviceDisplay.MainDisplayInfo.Density);
+            Console.WriteLine(DeviceDisplay.MainDisplayInfo.Height);
+            Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
+            Console.WriteLine("____________________");
         }
 
     }
