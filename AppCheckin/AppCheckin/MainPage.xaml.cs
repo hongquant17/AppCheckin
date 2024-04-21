@@ -21,7 +21,7 @@ namespace AppCheckin
         {
             if (alreadyCheck)
             {
-                await Navigation.PushAsync(new CheckinOption());
+                await Navigation.PushAsync(new CheckinPage());
             }
             else
             {

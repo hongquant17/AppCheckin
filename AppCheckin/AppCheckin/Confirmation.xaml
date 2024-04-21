@@ -17,8 +17,8 @@
             <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
 
             <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <Button Text="Lấy mẫu"  CornerRadius="40"/>
-                <Button Text="Điểm danh" CornerRadius="40"/>
+                <Button Text="Lấy mẫu" Clicked="RegisterButton_Clicked" CornerRadius="50" WidthRequest="100" HeightRequest="100" Margin="50"/>
+                <Button Text="Điểm danh" Clicked="CheckinButton_Clicked" CommandParameter="true" CornerRadius="50" WidthRequest="100" HeightRequest="100" Margin="50"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
