@@ -13,9 +13,21 @@ namespace AppCheckin
     public partial class Confirmation : ContentPage
     {
         private bool flag = true;
-        public Confirmation()
+        private bool checkin; // checkin or register
+        public Confirmation(bool checkin)
         {
             InitializeComponent();
+            this.checkin = checkin;
+            if (checkin)
+            {
+                alreadyCheckText.IsVisible = true;
+                alreadyRegText.IsVisible = false;
+            }
+            else
+            {
+                alreadyCheckText.IsVisible = false;
+                alreadyRegText.IsVisible = true;
+            }
         }
 
         async void CheckinButton_Clicked(object sender, EventArgs e)

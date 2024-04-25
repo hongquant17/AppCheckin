@@ -10,7 +10,8 @@ namespace AppCheckin
 {
     public partial class MainPage : ContentPage
     {
-        private bool alreadyCheck = true;
+        private bool alreadyCheck = false;
+        private bool alreadyRegister = false;
 
         public MainPage()
         {
@@ -19,19 +20,26 @@ namespace AppCheckin
 
         async void CheckinButton_Clicked(object sender, EventArgs e)
         {
-            if (alreadyCheck)
+            if (!alreadyCheck)
             {
                 await Navigation.PushAsync(new CheckinPage());
             }
             else
             {
-                await Navigation.PushAsync(new Confirmation());
+                await Navigation.PushAsync(new Confirmation(true)); //true: chuan bi diem danh
             }
         }
 
         async void RegisterButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Register());
+            if (!alreadyRegister)
+            {
+                await Navigation.PushAsync(new Register());
+            }
+            else
+            {
+                await Navigation.PushAsync(new Confirmation(false)); // false: chuan bi lay mau
+            }
         }
         
     }

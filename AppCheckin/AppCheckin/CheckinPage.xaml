@@ -6,7 +6,7 @@
              x:Class="AppCheckin.CheckinPage">
 
     <AbsoluteLayout>
-        <xct:CameraView CameraOptions="Front"
+        <leadtools:CameraView CameraOptions="Front"
                     x:Name="cameraView"
                     CaptureMode="Photo"
                     OnAvailable="CameraView_OnAvailable"

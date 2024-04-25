@@ -38,15 +38,17 @@ namespace AppCheckin
             captureButton.IsEnabled = e;
         }
 
-        // private async void MainPage_Appearing(object sender, EventArgs e) {
-        //     PermissionsGranted = await VerifyPermissions();
-        //     if (PermissionsGranted == false) 
-        //         return;
+        private async void MainPage_Appearing(object sender, EventArgs e)
+        {
+            PermissionsGranted = await VerifyPermissions();
+            if (PermissionsGranted == false)
+                return;
 
-        //     else {
-        //         App.Current.MainPage
-        //     }
-        // }
+            else
+            {
+                //App.Current.MainPage
+             }
+        }
 
         private async Task<bool> VerifyPermissions() {
             try {
@@ -80,12 +82,6 @@ namespace AppCheckin
             alignFaceText.IsVisible = false;
             captureButton.IsVisible = false;
 
-            //byte[] imageBytes = await ConvertImageSourceToBytes(e.Image);
-
-            //var fileName = Path.Combine(FileSystem.CacheDirectory, "captured_image.jpg");
-            //File.WriteAllBytes(fileName, imageBytes);
-
-            //Console.WriteLine("Image saved successfully to: " + fileName);
             Console.WriteLine("____________________");
             Console.WriteLine(previewPicture.Height);
             Console.WriteLine(previewPicture.Width);
@@ -93,22 +89,26 @@ namespace AppCheckin
             Console.WriteLine(DeviceDisplay.MainDisplayInfo.Height);
             Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
             Console.WriteLine("____________________");
-            
 
-            if (captureButton.Text == "Live Capture") {
+
+            if (captureButton.Text == "Live Capture")
+            {
                 captureButton.Text = "Stop";
                 cameraView.FrameReceived += Camera_FrameReceived;
             }
-            else {
+            else
+            {
                 captureButton.Text = "Live Capture";
                 cameraView.FrameReceived -= Camera_FrameReceived;
             }
         }
 
-        private void Camera_FrameReceived(Leadtools.Camera.Xamarin.FrameHandlerEventArgs e) {
+        private void Camera_FrameReceived(Leadtools.Camera.Xamarin.FrameHandlerEventArgs e)
+        {
             frameCounter++;
-            Device.BeginInvokeOnMainThread(() => {
-                alignFaceText.Text = $"Frames Processed: {frameCounter}"; 
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                alignFaceText.Text = $"Frames Processed: {frameCounter}";
             });
         }
     }
